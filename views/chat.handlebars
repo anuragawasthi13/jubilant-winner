@@ -1,0 +1,13 @@
+<div ng-controller="chatController">
+	<input type="hidden" id="username" value="{{user.username}}">
+	<div class="row">
+		<div class="col-lg-4">
+			<ul ng-repeat="auser in users">
+				<a ng-href="/chatdetails/{{user.username}}/[[auser.username]]"><li>[[auser.username]]</li></a>
+			</ul>
+		</div>
+		<div class="col-lg-8">
+			<div ng-view></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<div ng-controller="aController">
+<h2 class="page-header">Dashboard</h2>
+<p>Hi {{user.username}},Welcome to your dashboard</p>
+<ul class="nav nav-pills">
+    <li><a ng-click="myfilesLinkClick()">My Files</a></li>
+    <li><a ng-click="uploadFilesClick()">Upload Files</a></li>
+</ul>
+<div class="container">
+<div id="myfiles">
+    <p>Hey man,these are your images</p>
+    <div class="row">
+    <div class="col-lg-10">
+    {{#each user.myimages}}
+    	
+    	<img ng-src="{{image_url_xsmall}}">
+    	}
+    {{/each}}
+    </div>
+    </div>
+</div>
+<div id="fileupload">
+	
+	<form id="upload" method="POST" enctype="multipart/form-data">
+		<fieldset>
+			<legend>HTML file upload</legend>
+			<input type="hidden" name="MAX_FILE_SIZE" id="MAX_FILE_SIZE" value="300000">
+			<div>
+				<label for="fileselect">Files to upload:</label>
+				<input type="file" id="uimg" name="uimg"/>
+				<div id="filedrag">or drag your file here</div>
+			</div>
+			<div id="submitbutton">
+				<button ng-click="submitButtonFunction()">Upload files</button>
+			</div>
+		</fieldset>
+	</form>
+	<div id="messages">
+		<p>Status Messages</p>
+	</div>
+</div>
+<div>
+</div>
